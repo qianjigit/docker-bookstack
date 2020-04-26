@@ -10,36 +10,33 @@ LABEL maintainer="homerr"
 # package versions
 ARG BOOKSTACK_RELEASE
 
-RUN \
- echo "**** install packages ****" && \
- apk add --no-cache  \
- 		curl \
- 		msttcorefonts-installer \
- 		fontconfig \
- 		memcached \
- 		netcat-openbsd \
- 		php7-ctype \
- 		php7-curl \
- 		php7-dom \
- 		php7-gd \
- 		php7-ldap \
- 		php7-mbstring \
- 		php7-memcached \
- 		php7-mysqlnd \
- 		php7-openssl \
- 		php7-pdo_mysql \
- 		php7-phar \
- 		php7-simplexml \
- 		php7-tidy \
- 		php7-tokenizer \
- 		qt5-qtbase \
- 		xvfb \
- 		dbus \
- 		tar \
- 		ttf-freefont \
- 		wkhtmltopdf \
- 		update-ms-fonts \
- 		fc-cache -f && \
+RUN apk --no-cache add curl && \
+ 		msttcorefonts-installer && \
+ 		fontconfig && \
+ 		update-ms-fonts && \
+    	fc-cache -f && \
+ 		memcached && \
+ 		netcat-openbsd && \
+ 		php7-ctype && \
+ 		php7-curl && \
+ 		php7-dom && \
+ 		php7-gd && \
+ 		php7-ldap && \
+ 		php7-mbstring && \
+ 		php7-memcached && \
+ 		php7-mysqlnd && \
+ 		php7-openssl && \
+ 		php7-pdo_mysql && \
+ 		php7-phar && \
+ 		php7-simplexml && \
+ 		php7-tidy && \
+ 		php7-tokenizer && \
+ 		qt5-qtbase && \
+ 		xvfb && \
+ 		dbus && \
+ 		tar && \
+ 		ttf-freefont && \
+ 		wkhtmltopdf && \ 		
  echo "**** tidy bug fix ****" && \
  curl -s \
  		http://dl-cdn.alpinelinux.org/alpine/v3.7/community/x86_64/tidyhtml-libs-5.4.0-r0.apk | \
