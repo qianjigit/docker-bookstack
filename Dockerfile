@@ -10,8 +10,6 @@ LABEL maintainer="homerr"
 # package versions
 ARG BOOKSTACK_RELEASE
 
-COPY boot_wkhtmltopdf.sh /usr/bin/boot_wkhtmltopdf.sh && \
-
 RUN \
  echo "**** install packages ****" && \
  apk add --no-cache  \
@@ -63,7 +61,6 @@ RUN \
  tar xf \
  /tmp/bookstack.tar.gz -C \
  		/var/www/html/ --strip-components=1 && \
- chmod a+x /usr/bin/boot_wkhtmltopdf.sh && \
  echo "**** install  composer ****" && \
  cd /tmp && \
  curl -sS https://getcomposer.org/installer | php && \
